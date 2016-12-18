@@ -1,0 +1,12 @@
+domains
+ list=integer*
+predicates
+ delete(list, integer, list)
+ 
+clauses
+ delete([], _Elem, []):-!.
+  delete([Elem|Tail], Elem, ResultTail):- delete(Tail, Elem, ResultTail), !.
+ delete([Head|Tail], Elem, [Head|ResultTail]):- delete(Tail, Elem, ResultTail). 
+ 
+goal
+ write("¬ведите число:"), readint(X), delete([5,1,5], X, ResultList).
