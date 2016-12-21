@@ -44,12 +44,7 @@ route(Room,Room,VisitedRooms):-
   member(r4_gold_treasure,VisitedRooms),
   write(VisitedRooms),nl.
 
-route(Room,Way_out,VisitedRooms):-
-  neighborroom(Room,Nextroom),
-  avoid(DangerousRooms),
-  not(member(NextRoom,DangerousRooms)),
-  not(member(NextRoom,VisitedRooms)),
-  route(NextRoom,Way_out,[NextRoom|VisitedRooms]).
+
 
 member(X,[X|_]).
 member(X,[_|H]):-member (X,H).
