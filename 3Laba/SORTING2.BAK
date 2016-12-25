@@ -36,7 +36,7 @@ domains
    getdatalist_m(OrderList) :- findall(Order, getdata_m(Order), OrderList).
    
    printlist([]).
-   printlist([data(Name,Age)|Tail]) :- write(Name,"\t",Age), nl, printlist(Tail).
+   printlist([data(Product,Qty)|Tail]) :- write(Product,"\t",Qty), nl, printlist(Tail).
    
    
  goal
